@@ -18,16 +18,14 @@ const users = [...Array(10).keys()].map((
 
 export const Users = () => {
     const {state} = useLocation();
-    const isAdmin = state ? state.isAdmin : false;
 
-    console.log(isAdmin);
     return (
         <SContainer>
             <h2>ユーザー一覧</h2>
             <SearchInput />
             <SUserArea>
                 {users.map((user) => (
-                    <UserCard key={user.id} user={user} />
+                    <UserCard key={user.id} user={user}/>
                 ))}
             </SUserArea>
         </SContainer>
