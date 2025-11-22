@@ -1,11 +1,26 @@
-import {PrimaryButton} from "../atoms/button/PrimaryButton";
+import styled from "styled-components";
 
-export const SearchInput = () => {
+import {PrimaryButton} from "../atoms/button/PrimaryButton";
+import {Input} from "../atoms/input/input.tsx";
+
+export const SearchInput = (props) => {
     return (
         <div>
-            <input placeholder="検索条件"></input>
-            <PrimaryButton>Search</PrimaryButton>
+            <SContainer>
+                <Input placeholder=""></Input>
+                <SButtonWrapper>
+                    <PrimaryButton>Search</PrimaryButton>
+                </SButtonWrapper>
+            </SContainer>
             <br />
         </div>
     );
 };
+
+const SContainer = styled.div`
+    display: flex;
+    align-items: center;
+`;
+const SButtonWrapper = styled.div`
+    padding-left: 8px;
+`;
